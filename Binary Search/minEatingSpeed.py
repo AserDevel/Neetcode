@@ -2,13 +2,9 @@ import math
 
 class Solution:
     def minEatingSpeed(self, piles: list[int], h: int) -> int:
-        max = 0
+        max_pile = max(piles)
 
-        for p in piles:
-            if p > max:
-                max = p
-
-        k = math.ceil(max / (h - len(piles) + 1))  
+        k = math.ceil(max_pile / (h - len(piles) + 1))  
         
         x = h + 1
         while x > h:
